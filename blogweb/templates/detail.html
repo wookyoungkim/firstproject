@@ -33,6 +33,13 @@
         <h1>{{ post.title }}</h1>
         <p>{{ post.pub_date }}</p>
         <p>{{ post.body }}</p>
+
+        {% if post.pic %}
+        있음 
+        
+        <img src="{{ post.pic.url }}" width="240px" alt="">
+        {% endif %}
+
         <a href="{% url 'post' %}">돌아가기</a>
         <a href="{% url 'delete' post.id%}">글 삭제</a>
     </div>
